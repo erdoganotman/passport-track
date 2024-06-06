@@ -42,7 +42,7 @@ include(__DIR__.'/../backend/customer/customer-delete.php');
                         $customerName = "Bilinmeyen Müşteri";
                     }
                     ?>
-                    <tr onclick="window.location='customer-details.php?id=<?= $row['odeme_id'] ?>'">
+                    <tr onclick="window.location='customer-details.php?id=<?= $row['musteri_id'] ?>'">
                         <td><?= $customerName ?></td>
                         <td><?= $customerTc ?></td>
                         <td><?= $customerPasaport ?></td>

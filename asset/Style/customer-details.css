@@ -1,0 +1,14 @@
+.customer-left{
+    width: 250px;
+    height: 100%;
+    border: 1px solid black;
+}
+.dis-alan{
+    display: flex;
+}
+.customer-right{
+    height: 420px;
+}
+.table{
+    width: 100%;
+}

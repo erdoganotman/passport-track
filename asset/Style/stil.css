@@ -1,0 +1,109 @@
+body{
+  background-color: #818181;
+}
+.logo{
+    width: 100px;
+    height: 75px;
+    margin-left:50px;
+    
+}
+.navbar-text{
+    margin-right: 50px;
+}
+.sidenav {
+    height: 100%;
+    width: 200px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:#F8F9FA;
+    overflow-x: hidden;
+    padding-top: 20px;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+  }
+  .sidenav button{
+    width: 90%;
+  }
+  .sidenav a {
+    padding: 6px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    .sidenav button{
+      width: 100%;
+    }
+    .sidenav{
+      width: 100%;
+    }
+  }
+  .table {
+    width: 100%;
+    text-transform: capitalize;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table-wrapper {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.table td,
+.table th {
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+    .table td,
+    .table th {
+        white-space: normal;
+    }
+}
+@media screen and (max-width: 768px) {
+  .sidenav a {
+      padding: 6px 6px 6px 6px; /* Butonların iç ve dış boşluklarını ayarla */
+      font-size: 18px; /* Buton font boyutunu ayarla */
+      display: inline-block; /* Butonları yanyana yerleştir */
+      width: auto; /* Buton genişliğini otomatik ayarla */
+      margin: 0 10px 10px 0; /* Butonlar arasında ve etrafında boşluk bırak */
+  }
+      .dis-alan {
+        flex-direction: column;
+        align-items: center;
+
+}
+.sidenav button{
+  width: 100%;
+}
+.sidenav{
+  width: 100%;
+}
+.left{
+  width: 100%;
+
+ }
+}
+
+.left{
+ width: 100%;
+ display:flex;
+ flex-direction: column;
+}

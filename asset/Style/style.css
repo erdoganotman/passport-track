@@ -1,0 +1,18 @@
+.Form {
+    flex-direction: column;
+    display: flex;
+}
+
+.table {
+    height: 80px;
+    text-transform: capitalize;
+    width: 100%;
+}
+.row{
+    justify-content: space-around;
+    padding:20px 0px 0px 0px;
+}
+.doviz p{
+    text-transform: capitalize;
+    font-size: 15px;
+}

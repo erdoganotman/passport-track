@@ -17,7 +17,7 @@ $today = date("Y-m-d");
 ?>
 
 <div class="dis-alan" style="display: flex;">
-    <div style="background-color: #818181;"><?php include('../include/meeting-left-main.php');?> </div>
+   
     <div class="table-container">
         <?php
         // Check if the $result variable is set (results from the database query)

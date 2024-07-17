@@ -78,6 +78,7 @@ include(__DIR__.'/../backend/customer/customer-list.php');
         text-transform: capitalize;
     }
 </style>
+<script src="../asset/Script/customer-list.js"></script>
 <?php 
 include('../include/footer.php');
 ?>

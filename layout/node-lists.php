@@ -25,7 +25,7 @@ include(__DIR__.'/../backend/node/node-list.php');
 
         // Check if the $result variable is set (results from the database query)
         if ($query) {
-            echo "<form id='bulkDeleteForm' method='POST' action='bulk-delete.php'>";
+           
             echo "<table border='1' class='table' style='height:80px';>";
             echo "<tr>
                     <th>Notlar</th>
@@ -41,7 +41,7 @@ include(__DIR__.'/../backend/node/node-list.php');
             echo "</table>";
 
          
-            echo "</form>";
+        
 
             // JavaScript to handle row click event and redirect to customer details page
             echo "<script src='../asset/Script/node-list.js'>

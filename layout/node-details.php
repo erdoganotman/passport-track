@@ -1,89 +1,80 @@
 <?php
 include('../include/header.php');
-include(__DIR__.'/../backend/node/node-list.php');
+include(__DIR__.'/../backend/node/node-detail.php');
 ?>
-<div class="dis-alan" style="display: flex;">
-    <div></div>
-    <div style="width: 100%;height:100%;">
-        <?php
-        // Sayfa numarasını al
-        $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+<div class="dis-alan"style="display: flex;">    
+<div><?php include('../include/node-left-main.php') ?></div>
+<div class="customer-right">
+    <div style="width:100%;height:420px;">
+    
+    <h2>Müşteri Detayları</h2>
 
-        // Her sayfada gösterilecek müşteri sayısı
-        $nodePage = 15;
+    <?php
+    // Check if the $customerDetails, $customerDetails3, and $customerDetails2 variables are set
+    if (isset($nodeDetails)) {
+        echo "<table border='1' class='table' style='height:80px'>";
+        echo "<tr>
+                <th>Notlar</th>
+                
+            </tr>";
 
-        // Başlangıç kaydı
-        $startFrom = ($page - 1) * $nodePage;
+        // Display customer details
+        echo "<tr>
+                <td>" . $nodeDetails['notlar'] . "</td>
+            </tr>";
 
-        // SQL sorgusuna LIMIT ve OFFSET ekle
-        $query = $conn->query("SELECT * FROM notlar LIMIT $startFrom, $nodePage");
-
-        // Bağlantı kontrolü
-        if (!$query) {
-            die("<b>Sorgu Hatası:</b> " . $conn->error);
-        }
-
-        // Check if the $result variable is set (results from the database query)
-        if ($query) {
-            echo "<form id='bulkDeleteForm' method='POST' action='../backend/node/node-bulk-delete.php'>";
-            echo "<table border='1' class='table' style='height:80px';>";
-            echo "<tr>
-                    <th>Select</th>
-                    <th>Notlar</th>
-                </tr>";
-
-            while ($row = $query->fetch_assoc()) {
-                // Add a unique identifier to each row for JavaScript to identify
-                echo "<tr class='node-row' data-node-id='" . $row['id'] . "'>
-                        <td><input type='checkbox' name='selected_ids[]' value='" . $row['id'] . "'></td>
-                        <td>" . $row['notlar'] . "</td>
-                    </tr>";
-            }
-
-            echo "</table>";
-
-            echo "<button type='submit'>Delete Selected</button>";
-            echo "</form>";
-
-            // JavaScript to handle row click event and redirect to customer details page
-            echo "<script src='../asset/Script/node-list.js'>
-                    </script>";
-
-            // Sayfalama bağlantıları
-            echo "<nav aria-label='Page navigation example'>";
-            echo "<ul class='pagination'>";
-
-            // Önceki sayfa bağlantısı
-            if ($page > 1) {
-                echo "<li class='page-item'><a class='page-link' href='?page=" . ($page - 1) . "'>Previous</a></li>";
-            }
-
-            // Sayfa sayıları
-            $countQuery = $conn->query("SELECT COUNT(*) FROM musteri");
-            if ($countQuery) {
-                $totalPages = ceil($countQuery->fetch_assoc()['COUNT(*)'] / $nodePage);
-                for ($i = 1; $i <= $totalPages; $i++) {
-                    echo "<li class='page-item'><a class='page-link' href='?page=$i'>$i</a></li>";
-                }
-            } else {
-                die("<b>Sorgu Hatası:</b> " . $conn->error);
-            }
-
-            // Sonraki sayfa bağlantısı
-            if ($query->num_rows >= $nodePage) {
-                echo "<li class='page-item'><a class='page-link' href='?page=" . ($page + 1) . "'>Next</a></li>";
-            }
-
-            echo "</ul>";
-            echo "</nav>";
-        }
-        ?>
-    </div>
+        echo "</table>";
+    } else {
+        echo "Müşteri detayları bulunamadı.";
+    }
+    ?>
 </div>
+</div>
+</div>
+<?php include('../include/footer.php') ?>
 <style>
     .table{
         height: 380px;
         text-transform: capitalize;
     }
-</style>
+</style>    <?php
+include('../include/header.php');
+include(__DIR__.'/../backend/node/node-detail.php');
+?>
+<div class="dis-alan"style="display: flex;">    
+<div><?php include('../include/node-left-main.php') ?></div>
+<div class="customer-right">
+    <div style="width:100%;height:420px;">
+    
+    <h2>Müşteri Detayları</h2>
+
+    <?php
+    // Check if the $customerDetails, $customerDetails3, and $customerDetails2 variables are set
+    if (isset($nodeDetails)) {
+        echo "<table border='1' class='table' style='height:80px; width:100%'>";
+        echo "<tr>
+                <th>Notlar</th>
+                
+            </tr>";
+
+        // Display customer details
+        echo "<tr>
+                <td>" . $nodeDetails['notlar'] . "</td>
+            </tr>";
+
+        echo "</table>";
+    } else {
+        echo "Müşteri detayları bulunamadı.";
+    }
+    ?>
+</div>
+</div>
+</div>
 <?php include('../include/footer.php') ?>
+<style>
+    .table{
+        width: 100%; /* add this line */
+        height: 380px;
+        text-transform: capitalize;
+    }
+</style>

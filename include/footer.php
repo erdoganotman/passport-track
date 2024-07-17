@@ -42,10 +42,10 @@
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
           <!-- Content -->
           <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3"></i>E-World Visa Yurtdışı Eğitim ve Vize Danışmanlık
+            <i class="fas fa-gem me-3"></i>Esincode Software 
           </h6>
           <p>
-            E-World Visa Yurtdışı Eğitim ve Vize Danışmanlık Firmasına ait tasarlanmış Otomasyondur.
+           Esincode Software Tarafından yapılan bu otomasyonumuzdaki özelleştirme ve feedback için bize ulaşın
           </p>
         </div>
         <!-- Grid column -->
@@ -96,12 +96,12 @@
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">İletişim</h6>
-          <p><i class="fas fa-home me-3"></i> İstanbul,TÜRKİYE</p>
+          <p><i class="fas fa-home me-3"></i> Barış Mh.Kıbrıs Cd. No:11 Beylikdüzü-İstanbul,TÜRKİYE</p>
           <p>
             <i class="fas fa-envelope me-3"></i>
-            <a href="mailto:info@erdoganotman.com.tr">info@erdoganotman.com.tr</a>
+            <a href="mailto:info@erdoganotman.com.tr">info@esincode.com</a>
           </p>
-          <p><i class="fas fa-phone me-3"></i> <a href="phone:+905310283223"> + 90 531 0283223</a></p>
+          <p><i class="fas fa-phone me-3"></i> <a href="phone:+905310283223"> + 90 531 028 32 23</a></p>
         </div>
         <!-- Grid column -->
       </div>
@@ -113,7 +113,7 @@
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
     © 2024 Copyright:
-    <a class="text-reset fw-bold" href="https://erdoganotman.com.tr/">Erdoğan Otman</a>
+    <a class="text-reset fw-bold" href="https://esincode.com/">Esincode Software</a>
   </div>
   <!-- Copyright -->
 </footer>

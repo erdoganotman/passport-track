@@ -1,3 +1,6 @@
+*{
+  text-transform: capitalize;
+}
 body{
   background-color: #818181;
 }

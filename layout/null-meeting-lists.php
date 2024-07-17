@@ -1,16 +1,18 @@
 <?php
 include('../include/header.php');
 include(__DIR__.'/../backend/table-list/null-meeting-list.php');
-?>
 
-<?php
-$query = $conn->query("SELECT randevu_id, musteri_id, randevu_gidecegi_ulke,randevu_seyahat_tarihi,randevu_tarihi_saati FROM randevu ORDER BY randevu_tarihi_saati ASC");
+// Get the current page number from the URL, default to 1 if not set
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$records_per_page = 10;
+$offset = ($page - 1) * $records_per_page;
+
+$query = $conn->query("SELECT randevu_id, musteri_id, randevu_gidecegi_ulke,randevu_seyahat_tarihi,randevu_tarihi_saati FROM randevu ORDER BY randevu_tarihi_saati ASC LIMIT $records_per_page OFFSET $offset");
 if ($conn->errno > 0) {
     die("<b>Sorgu Hatası:</b> " . $conn->error);
 }
 
 $result = $query->fetch_all(MYSQLI_ASSOC);
-
 ?>
 <div class="dis-alan " style="display: flex;">
 <div><?php include('../include/meeting-left-main.php');?> </div>
@@ -78,13 +80,13 @@ foreach ($result as $row) {
             <?php
             // Bootstrap pagination ile sayfalama bağlantılarını ekle
             $totalRows = $conn->query("SELECT COUNT(*) as total FROM randevu WHERE randevu_tarihi_saati = '0000-00-00 00:00:00'")->fetch_assoc()['total'];
-            $totalPages = ceil($totalRows / 10);
+            $totalPages = ceil($totalRows / $records_per_page);
 
             if ($totalPages > 1) {
                 echo '<nav aria-label="Page navigation">';
                 echo '<ul class="pagination">';
                 for ($i = 1; $i <= $totalPages; $i++) {
-                    echo '<li class="page-item"><a class="page-link" href="?page=' . $i . '">' . $i . '</a></li>';
+                    echo '<li class="page-item ' . ($i == $page ? 'active' : '') . '"><a class="page-link" href="?page=' . $i . '">' . $i . '</a></li>';
                 }
                 echo '</ul>';
                 echo '</nav>';
@@ -99,7 +101,7 @@ foreach ($result as $row) {
 <?php include('../include/footer.php'); ?>
 <style>
     .table{
-        height: 380px;
+        height: 400px;
         text-transform: capitalize;
     }
     @media only screen and (max-width: 768px) {
@@ -139,6 +141,5 @@ foreach ($result as $row) {
         text-transform: uppercase;
     }
 }
-
 </style>
 <script src="../asset/Script/null-meeting.js"></script>
